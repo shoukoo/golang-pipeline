@@ -5,6 +5,7 @@ jobs:
     name: Go Checks
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@master
     - name: go1.11 linter
       uses: ./go1.11/linter
       env:
