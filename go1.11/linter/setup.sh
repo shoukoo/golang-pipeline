@@ -1,14 +1,10 @@
 #!/bin/bash
 set -exuo pipefail
 
-echo $INPUT_TEST
-echo $TEST
-echo "INSIDE $INSIDE"
-echo "OUTSIDE $INSIDE"
-
-test=${INPUT_TEST:-off}
-
-if [[ $test == "off" ]]; then
-  echo "hello there"
+if [ -z "${PROJECT_PATH}" ]; then
+  PROJECT_PATH="."
 fi
 
+echo "============"
+echo $PROJECT_PATH
+cd $PROJECT_PATH

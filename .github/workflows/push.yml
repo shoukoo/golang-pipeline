@@ -7,4 +7,5 @@ jobs:
     steps:
     - name: go1.11 linter
       uses: ./go1.11/linter
-      working-directory: ./test
+      env:
+        PROJECT_PATH: test
