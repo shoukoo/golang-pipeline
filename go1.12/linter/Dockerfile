@@ -1,7 +1,7 @@
 FROM golang:1.12
 
 LABEL name="Golang Pipeline"
-LABEL maintainer="Andy Hsieh and Alex Lance"
+LABEL maintainer="Shoukoo"
 LABEL version="0.2.0"
 LABEL repository="https://github.com/shoukoo/golang-pipeline"
 

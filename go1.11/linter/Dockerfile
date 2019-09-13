@@ -1,4 +1,3 @@
-
 FROM golang:1.11
 
 LABEL name="Golang Pipeline"
