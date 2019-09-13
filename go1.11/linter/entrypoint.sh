@@ -7,11 +7,7 @@ export GO111MODULE=on
 INSIDE=entry
 OUTSIDE=entry
 
-ls -al
-make setup
-
-echo "==== from setup"
-echo $test
+./setup.sh
 
 # https://www.staticcheck.io/docs/checks
 go get honnef.co/go/tools/cmd/staticcheck 
