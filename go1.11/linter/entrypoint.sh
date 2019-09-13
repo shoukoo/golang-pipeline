@@ -9,6 +9,8 @@ MISSPELL=${INPUT_MISSPELL:-off}
 
 ./setup.sh
 
+export GO111MODULE=on
+
 if [[ $STATICCHECK == "on" ]]; then
   # https://www.staticcheck.io/docs/checks
   go get honnef.co/go/tools/cmd/staticcheck 
