@@ -1,0 +1,10 @@
+on: push
+name: build
+jobs:
+  go-pipeline:
+    name: Go Checks
+    runs-on: ubuntu-latest
+    steps:
+    - name: go1.11 linter
+      uses: ./go1.11/linter
+      working-directory: test
