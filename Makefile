@@ -5,7 +5,8 @@ ver:
 	echo "$$old_version to $$version"; \
 	for i in $(shell find . -name "Dockerfile"); do sed -i "s/$$old_version/$$version/g" $$i; done;
 
-install:
+setup:
+	bash setup.sh	
 	
 
 test: 
