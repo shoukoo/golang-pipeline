@@ -6,6 +6,8 @@ export GO111MODULE=on
 
 INSIDE=entry
 OUTSIDE=entry
+
+ls -al
 make setup
 
 echo "==== from setup"

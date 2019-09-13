@@ -1,5 +1,5 @@
 #!/bin/bash
-set exou pipefail
+set -exuo pipefail
 
 echo $INPUT_TEST
 echo $TEST

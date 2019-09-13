@@ -13,4 +13,4 @@ test:
 	go test ./...
 
 
-.PHONY: ver
+.PHONY: ver test setup
