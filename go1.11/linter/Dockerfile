@@ -11,7 +11,6 @@ LABEL com.github.actions.icon="box"
 LABEL com.github.actions.color="blue"
 
 COPY entrypoint.sh /entrypoint.sh
-COPY setup.sh /setup.sh
-COPY linter.sh /linter.sh
+RUN ls -al
 
 ENTRYPOINT ["/entrypoint.sh"]
