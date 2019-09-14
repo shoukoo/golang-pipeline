@@ -11,6 +11,5 @@ LABEL com.github.actions.icon="box"
 LABEL com.github.actions.color="blue"
 
 COPY entrypoint.sh /entrypoint.sh
-RUN ls -al
 
 ENTRYPOINT ["/entrypoint.sh"]
