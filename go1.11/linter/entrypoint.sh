@@ -2,6 +2,6 @@
 
 set -exuo pipefail
 
-ls -al
 . ./setup.sh
+ls -al
 . ./linter.sh
