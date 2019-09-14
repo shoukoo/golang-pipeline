@@ -2,17 +2,12 @@
 
 set -exuo pipefail
 
+. ./setup.sh
+
 STATICCHECK=${INPUT_STATICCHECK:-on}
 ERRCHECK=${INPUT_ERRCHECK:-on}
 GOLINT=${INPUT_GOLINT:-off}
 MISSPELL=${INPUT_MISSPELL:-off}
-
-. ./setup.sh
-
-ls -al
-exit 1
-
-export GO111MODULE=on
 
 if [[ $STATICCHECK == "on" ]]; then
   # https://www.staticcheck.io/docs/checks
