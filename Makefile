@@ -5,12 +5,6 @@ ver:
 	echo "$$old_version to $$version"; \
 	for i in $(shell find . -name "Dockerfile"); do sed -i "s/$$old_version/$$version/g" $$i; done;
 
-setup:
-	bash setup.sh	
-	
-
-test: 
-	go test ./...
-
-
+sync:
+	cat setup.sh > go1.11/test/setup.sh
 .PHONY: ver test setup
