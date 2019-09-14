@@ -13,3 +13,7 @@ jobs:
         MISSPELL: on
       env:
         PROJECT_PATH: test
+    - name: go1.11 test
+      uses: ./go1.11/test
+      env:
+        PROJECT_PATH: test
