@@ -9,6 +9,9 @@ MISSPELL=${INPUT_MISSPELL:-off}
 
 ./setup.sh
 
+ls -al
+exit 1
+
 export GO111MODULE=on
 
 if [[ $STATICCHECK == "on" ]]; then
