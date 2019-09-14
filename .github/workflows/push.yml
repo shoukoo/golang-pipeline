@@ -8,5 +8,8 @@ jobs:
     - uses: actions/checkout@master
     - name: go1.11 linter
       uses: ./go1.11/linter
+      with:
+        GOLINT: on
+        MISSPELL: on
       env:
         PROJECT_PATH: test
