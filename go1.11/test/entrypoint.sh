@@ -2,6 +2,5 @@
 
 set -exuo pipefail
 
-export GO111MODULE=on
-make test
-
+. ./setup.sh
+go test ./...
