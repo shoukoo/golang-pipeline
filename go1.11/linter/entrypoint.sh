@@ -7,7 +7,7 @@ ERRCHECK=${INPUT_ERRCHECK:-on}
 GOLINT=${INPUT_GOLINT:-off}
 MISSPELL=${INPUT_MISSPELL:-off}
 
-./setup.sh
+. ./setup.sh
 
 ls -al
 exit 1
