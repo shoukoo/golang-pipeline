@@ -14,4 +14,5 @@ COPY entrypoint.sh /entrypoint.sh
 COPY gp-release.sh /gp-release.sh
 COPY gp-setup.sh /gp-setup.sh
 
+RUN apt-get update && apt-get install -y jq
 ENTRYPOINT ["/entrypoint.sh"]
