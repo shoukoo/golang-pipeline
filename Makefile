@@ -6,5 +6,6 @@ ver:
 	for i in $(shell find . -name "Dockerfile"); do sed -i "s/$$old_version/$$version/g" $$i; done;
 
 sync:
-	cat setup.sh > go1.11/test/setup.sh
-.PHONY: ver test setup
+	cat setup.sh | tee $(shell find . -name "gp-setup.sh")
+	cat linter.sh | tee $(shell find . -name "gp-linter.sh")
+.PHONY: ver sync

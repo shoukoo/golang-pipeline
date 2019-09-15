@@ -11,7 +11,7 @@ LABEL com.github.actions.icon="box"
 LABEL com.github.actions.color="blue"
 
 COPY entrypoint.sh /entrypoint.sh
-COPY linter.sh /linter.sh
-COPY setup.sh /setup.sh
+COPY gp-linter.sh /gp-linter.sh
+COPY gp-setup.sh /gp-setup.sh
 
 ENTRYPOINT ["/entrypoint.sh"]

@@ -9,6 +9,6 @@ if [ -z "${PROJECT_PATH}" ]; then
 fi
 
 # Move required files into project path
-[ -e "linter.sh" ] && cp "linter.sh" "$PROJECT_PATH/linter.sh" || true
+[ -e "gp-linter.sh" ] && cp "linter.sh" "$PROJECT_PATH/gp-linter.sh" || true
 
 cd $PROJECT_PATH
