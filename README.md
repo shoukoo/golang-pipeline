@@ -14,25 +14,23 @@ golang-pipeline supports Go version 1.11, 1.12 and 1.13 and each version has its
 shoukoo/golang-pipeline/<Go versions>/<action name>@master
 ```
 
-**Go1.11**
+**Examples**
 ```
+# Run linters in Go1.11
 shoukoo/golang-pipeline/go1.11/linter@master
-shoukoo/golang-pipeline/go1.11/test@master
-shoukoo/golang-pipeline/go1.11/release@master
-```
-
-**Go1.12**
-```
-shoukoo/golang-pipeline/go1.12/linter@master
+# Run test in Go1.12
 shoukoo/golang-pipeline/go1.12/test@master
-shoukoo/golang-pipeline/go1.12/release@master
+# Run release in Go1.13
+shoukoo/golang-pipeline/go1.13/release@master
 ```
 
-**Go1.13**
+If your Go project is not located at the root of the repo you can also specify environment variable PROJECT_PATH:
 ```
-shoukoo/golang-pipeline/go1.13/linter@master
-shoukoo/golang-pipeline/go1.13/test@master
-shoukoo/golang-pipeline/go1.13/release@master
+    steps:
+    - name: go1.11 test
+      uses: shoukoo/golang-pipeline/go1.12/test@master
+      env:
+        PROJECT_PATH: "./my/new/path"
 ```
 
 # Actions:
@@ -82,8 +80,6 @@ jobs:
     steps:
     - name: go1.11 test
       uses: shoukoo/golang-pipeline/go1.12/test@master
-      env:
-        PROJECT_PATH: test
 ```
 
 ## Build:
@@ -93,7 +89,7 @@ is the running program's operating system target: one of darwin, freebsd, linux,
 - **GOARCH**
 is the running program's architecture target: one of 386, amd64, arm, s390x, and so on.
 - **GITHUB_TOKEN**
-Passing the value `${{ secrets.GITHUB_TOKEN }}` to deploy your build
+use this token -  `${{ secrets.GITHUB_TOKEN }}` to deploy your build
 
 **Exmaple**:
 ``` yaml
