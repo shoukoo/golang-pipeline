@@ -3,5 +3,5 @@
 set -exuo pipefail
 
 ls -al
-. ./gp-setup.sh
-. ./gp-linter.sh
+/gp-setup.sh
+/gp-linter.sh
