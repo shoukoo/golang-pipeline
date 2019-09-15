@@ -8,4 +8,5 @@ ver:
 sync:
 	cat setup.sh | tee $(shell find . -name "gp-setup.sh")
 	cat linter.sh | tee $(shell find . -name "gp-linter.sh")
+	cat release.sh | tee $(shell find . -name "gp-release.sh")
 .PHONY: ver sync
