@@ -12,4 +12,6 @@ fi
 [ -e "gp-linter.sh" ] && cp "gp-linter.sh" "$PROJECT_PATH/gp-linter.sh" || true
 [ -e "gp-setup.sh" ] && cp "gp-setup.sh" "$PROJECT_PATH/gp-setup.sh" || true
 
+ls -al
+
 cd $PROJECT_PATH
