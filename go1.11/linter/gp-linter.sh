@@ -7,8 +7,6 @@ ERRCHECK=${INPUT_ERRCHECK:-on}
 GOLINT=${INPUT_GOLINT:-off}
 MISSPELL=${INPUT_MISSPELL:-off}
 
-ls -al
-
 if [[ $STATICCHECK == "on" ]]; then
   # https://www.staticcheck.io/docs/checks
   go get honnef.co/go/tools/cmd/staticcheck 
