@@ -36,12 +36,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: go1.11 linter
-      uses: ./go1.11/linter
+      uses: shoukoo/golang-pipeline/go1.12/linter/@master
       with:
         GOLINT: on
         MISSPELL: off
 ```
-### Test:
+## Test:
+**Example**
 ```yaml
 on: push
 name: build
@@ -51,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: go1.11 test
-      uses: ./go1.11/test
+      uses: shoukoo/golang-pipeline/go1.12/test/@master
       env:
         PROJECT_PATH: test
 ```
@@ -59,11 +60,11 @@ jobs:
 ## Build:
 You need to pass GOOS, GOARCH and GITHUB_TOKEN env variables to allow golang-pipeline to build and deploy binary to a release.
 - **GOOS**
-GOOS is the running program's operating system target: one of darwin, freebsd, linux, and so on.
+is the running program's operating system target: one of darwin, freebsd, linux, and so on.
 - **GOARCH**
-GOARCH is the running program's architecture target: one of 386, amd64, arm, s390x, and so on.
+is the running program's architecture target: one of 386, amd64, arm, s390x, and so on.
 - **GITHUB_TOKEN**
-You just need to pass the value `${{ secrets.GITHUB_TOKEN }}` to deploy build
+Passing the value `${{ secrets.GITHUB_TOKEN }}` to deploy your build
 
 **Exmaple**:
 ``` yaml
