@@ -2,5 +2,5 @@
 
 set -exuo pipefail
 
-. ./g-setup.sh
+. ./gp-setup.sh
 go test ./..

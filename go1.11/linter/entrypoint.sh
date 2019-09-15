@@ -2,5 +2,5 @@
 
 set -exuo pipefail
 
-. ./g-setup.sh
-. ./g-linter.sh
+. ./gp-setup.sh
+. ./gp-linter.sh
