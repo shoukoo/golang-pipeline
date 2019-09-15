@@ -21,7 +21,7 @@ curl \
             -H "Authorization: Bearer ${GITHUB_TOKEN}" \
               "${UPLOAD_URL}?name=${NAME}"
 
-CHECKSUM=$(md5sum $i | cut -d ' ' -f 1)
+CHECKSUM=$(md5sum "$NAME" | cut -d ' ' -f 1)
 
 curl \
     -X POST \
