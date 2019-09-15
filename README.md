@@ -26,11 +26,11 @@ shoukoo/golang-pipeline/go1.13/release@master
 
 If your Go project is not located at the root of the repo you can also specify environment variable PROJECT_PATH:
 ```
-    steps:
-    - name: go1.11 test
-      uses: shoukoo/golang-pipeline/go1.12/test@master
-      env:
-        PROJECT_PATH: "./my/new/path"
+steps:
+- name: go1.11 test
+  uses: shoukoo/golang-pipeline/go1.12/test@master
+  env:
+    PROJECT_PATH: "./my/new/path"
 ```
 
 # Actions:
