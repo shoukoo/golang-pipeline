@@ -3,9 +3,11 @@ set -exuo pipefail
 
 export GO111MODULE=on
 
+WORK_SPACE=${PROJECT_PATH:-}
+
 # Set PROJECT_PATH to change your working directory
-if [ -z "${PROJECT_PATH}" ]; then
-  PROJECT_PATH="."
+if [ -z "${WORK_SPACE}" ]; then
+  WORK_SPACE="."
 fi
 
-cd $PROJECT_PATH
+cd $WORK_SPACE
