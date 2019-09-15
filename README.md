@@ -45,7 +45,7 @@ A program for checking for unchecked errors in go programs.
   - default: on
   - key: ERRCHECK
 - [**Golint**](https://github.com/golang/lint)
-A program for checking for unchecked errors in go programs.
+Golint is more focused with coding style. Golint is in use at Google, and it seeks to match the accepted style of the open source Go project.
   - default: off
   - key: GOLINT
 - [**Misspell**](https://github.com/client9/misspell)
