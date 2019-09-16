@@ -28,7 +28,7 @@ shoukoo/golang-pipeline/go1.13/release@master
 If your Go project is not located at the root of the repo you can also specify environment variable PROJECT_PATH:
 ```
 steps:
-- name: go1.11 test
+- name: go1.12 test
   uses: shoukoo/golang-pipeline/go1.12/test@master
   env:
     PROJECT_PATH: "./my/new/path"
@@ -63,7 +63,7 @@ jobs:
     name: Go Checks
     runs-on: ubuntu-latest
     steps:
-    - name: go1.11 linter
+    - name: go1.12 linter
       uses: shoukoo/golang-pipeline/go1.12/linter@master
       with:
         GOLINT: on
@@ -79,7 +79,7 @@ jobs:
     name: Go Checks
     runs-on: ubuntu-latest
     steps:
-    - name: go1.11 test
+    - name: go1.12 test
       uses: shoukoo/golang-pipeline/go1.12/test@master
 ```
 
@@ -106,7 +106,7 @@ jobs:
       if: github.event.action == 'published'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GOOS: linux
+        GOOS: darwin
         GOARCH: amd64
     - name: windows build
       uses: shoukoo/golang-pipeline/go1.12/release@master
