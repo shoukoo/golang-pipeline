@@ -1,4 +1,4 @@
-<img src="https://github.com/shoukoo/golang-pipeline/workflows/Build%20on%20Push/badge.svg" class="image mod-full-width" /> <img src="https://img.shields.io/github/v/release/shoukoo/golang-pipeline?sort=semver" class="image mod-full-width" />
+<img src="https://github.com/shoukoo/golang-pipeline/workflows/build/badge.svg" class="image mod-full-width" /> <img src="https://img.shields.io/github/v/release/shoukoo/golang-pipeline?sort=semver" class="image mod-full-width" />
 
 # golang-pipeline
 > Important! This Github Action only supports Go Module
