@@ -2,5 +2,5 @@
 
 set -exuo pipefail
 
-export GO111MODULE=on
-go test -v
+. /gp-setup.sh
+. /gp-linter.sh

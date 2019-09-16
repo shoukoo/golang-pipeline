@@ -1,0 +1,19 @@
+on: push
+name: build
+jobs:
+  go-pipeline:
+    name: Go Checks
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: go1.11 linter
+      uses: ./go1.11/linter
+      with:
+        GOLINT: on
+        MISSPELL: on
+      env:
+        PROJECT_PATH: test
+    - name: go1.11 test
+      uses: ./go1.11/test
+      env:
+        PROJECT_PATH: test
