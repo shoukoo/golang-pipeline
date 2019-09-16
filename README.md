@@ -2,7 +2,7 @@
 > Important! This Github Action only supports Go Module
 
 ## Quick Install
-Run the below command to create a workflow in your repo.
+Run the below command to create a push workflow in your repo.
 ```bash
 curl -o- https://raw.githubusercontent.com/shoukoo/golang-pipeline/master/install.sh | bash
 ```
