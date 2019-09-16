@@ -8,7 +8,7 @@ if [ -f ".github/workflows/push.yml" ]; then
   exit 1
 fi
 
-cat << EOF > .github/workflows/push.yaml
+cat << EOF > .github/workflows/push.yml
 on: push
 name: build
 jobs:

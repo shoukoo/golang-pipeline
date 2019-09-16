@@ -3,7 +3,7 @@
 ## Quick Install
 Run the below command to create a workflow in your repo.
 ```bash
-curl
+curl -rsL https://raw.githubusercontent.com/shoukoo/golang-pipeline/master/install.sh | bash
 ```
 
 # Workflows
