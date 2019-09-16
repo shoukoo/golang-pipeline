@@ -125,3 +125,6 @@ jobs:
         GOOS: linux
         GOARCH: amd64
 ```
+
+## Self-Promotion
+Like golang-pipeline? Follow the repository on [GitHub](https://github.com/shoukoo/golang-pipeline) or follow me on [Twitter](https://twitter.com/shoukoo1)
