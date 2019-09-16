@@ -1,9 +1,10 @@
 # golang-pipeline
+> Important! This Github Action only supports Go Module
 
 ## Quick Install
 Run the below command to create a workflow in your repo.
 ```bash
-curl -rsL https://raw.githubusercontent.com/shoukoo/golang-pipeline/master/install.sh | bash
+curl -o- https://raw.githubusercontent.com/shoukoo/golang-pipeline/master/install.sh | bash
 ```
 
 # Workflows
