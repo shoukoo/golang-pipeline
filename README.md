@@ -83,7 +83,7 @@ jobs:
       uses: shoukoo/golang-pipeline/go1.12/test@master
 ```
 
-## Build:
+## Release:
 This action required GOOS, GOARCH and GITHUB_TOKEN env variables for golang-pipeline to build and deploy binary to a release.
 - **GOOS**
 is the running program's operating system target: one of darwin, freebsd, linux, and so on.
