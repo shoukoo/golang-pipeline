@@ -7,6 +7,7 @@ UPLOAD_URL=$(echo $EVENT_DATA | jq -r .release.upload_url)
 UPLOAD_URL=${UPLOAD_URL/\{?name,label\}/}
 PROJECT_NAME=$(basename $GITHUB_REPOSITORY)
 NAME="${PROJECT_NAME}-${GOOS}-${GOARCH}"
+EXT=""
 
 echo "Building $NAME under $GOOS/$GOARCH"
 go build -o "$NAME"
