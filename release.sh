@@ -6,16 +6,16 @@ EVENT_DATA=$(cat $GITHUB_EVENT_PATH)
 UPLOAD_URL=$(echo $EVENT_DATA | jq -r .release.upload_url)
 UPLOAD_URL=${UPLOAD_URL/\{?name,label\}/}
 PROJECT_NAME=$(basename $GITHUB_REPOSITORY)
-NAME="${PROJECT_NAME}-${GOOS}-${GOARCH}"
 EXT=""
-
-echo "Building $NAME under $GOOS/$GOARCH"
 if [ $GOOS == 'windows' ]; then
     EXT='.exe'
 fi
-go build -o "${NAME}${EXT}"
+NAME="${PROJECT_NAME}-${GOOS}-${GOARCH}${EXT}"
 
-tar cvfz tmp.tgz "${NAME}${EXT}"
+echo "Building $NAME under $GOOS/$GOARCH"
+go build -o "${NAME}"
+
+tar cvfz tmp.tgz "${NAME}"
 
 curl \
   --fail \
