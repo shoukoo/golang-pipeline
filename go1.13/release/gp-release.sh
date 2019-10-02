@@ -10,11 +10,10 @@ NAME="${PROJECT_NAME}-${GOOS}-${GOARCH}"
 EXT=""
 
 echo "Building $NAME under $GOOS/$GOARCH"
-go build -o "$NAME"
-
 if [ $GOOS == 'windows' ]; then
     EXT='.exe'
 fi
+go build -o "${NAME}${EXT}"
 
 tar cvfz tmp.tgz "${NAME}${EXT}"
 
