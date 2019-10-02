@@ -23,7 +23,7 @@ curl \
   --data-binary @${NAME}\
   -H 'Content-Type: application/octet-stream' \
   -H "Authorization: Bearer ${GITHUB_TOKEN}" \
-  "${UPLOAD_URL}?name=${NAME}"
+  "${UPLOAD_URL}?name=${NAME}.tar.gz"
 
 CHECKSUM=$(sha256sum "$NAME" | cut -d ' ' -f 1)
 
@@ -32,4 +32,4 @@ curl \
   --data "$CHECKSUM" \
   -H 'Content-Type: text/plain' \
   -H "Authorization: Bearer ${GITHUB_TOKEN}" \
-  "${UPLOAD_URL}?name=${NAME}_checksum.txt"
+  "${UPLOAD_URL}?name=${NAME}_checksum_sha256.txt"
