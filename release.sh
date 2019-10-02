@@ -11,6 +11,12 @@ NAME="${PROJECT_NAME}-${GOOS}-${GOARCH}"
 echo "Building $NAME under $GOOS/$GOARCH"
 go build -o "$NAME"
 
+if [ $GOOS == 'windows' ]; then
+    EXT='.exe'
+fi
+
+tar cvfz tmp.tgz "${NAME}${EXT}"
+
 curl \
   --fail \
   -X POST \
@@ -19,7 +25,7 @@ curl \
   -H "Authorization: Bearer ${GITHUB_TOKEN}" \
   "${UPLOAD_URL}?name=${NAME}"
 
-CHECKSUM=$(md5sum "$NAME" | cut -d ' ' -f 1)
+CHECKSUM=$(sha256sum "$NAME" | cut -d ' ' -f 1)
 
 curl \
   -X POST \
