@@ -1,4 +1,4 @@
-FROM golang:1.11
+FROM golang:1.11-alpine
 
 LABEL name="Golang Pipeline"
 LABEL maintainer="Shoukoo"
