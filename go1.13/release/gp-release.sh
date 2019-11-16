@@ -13,9 +13,9 @@ fi
 NAME="${PROJECT_NAME}-${GOOS}-${GOARCH}${EXT}"
 
 echo "Building $NAME under $GOOS/$GOARCH"
-go build -o "${NAME}"
+go build -o "${PROJECT_NAME}"
 
-tar cvfz tmp.tgz "${NAME}"
+tar cvfz tmp.tgz "${PROJECT_NAME}"
 CHECKSUM=$(sha256sum tmp.tgz | cut -d ' ' -f 1)
 
 curl \
