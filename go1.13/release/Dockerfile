@@ -14,5 +14,5 @@ COPY entrypoint.sh /entrypoint.sh
 COPY gp-release.sh /gp-release.sh
 COPY gp-setup.sh /gp-setup.sh
 
-RUN apt-get update && apt-get install -y jq
+RUN apk add --no-cache curl jq git build-base
 ENTRYPOINT ["/entrypoint.sh"]

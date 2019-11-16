@@ -14,4 +14,5 @@ COPY entrypoint.sh /entrypoint.sh
 COPY gp-linter.sh /gp-linter.sh
 COPY gp-setup.sh /gp-setup.sh
 
+RUN apk add --no-cache curl jq git build-base
 ENTRYPOINT ["/entrypoint.sh"]

@@ -13,4 +13,5 @@ LABEL com.github.actions.color="blue"
 COPY entrypoint.sh /entrypoint.sh
 COPY gp-setup.sh /gp-setup.sh
 
+RUN apk add --no-cache curl jq git build-base
 ENTRYPOINT ["/entrypoint.sh"]
