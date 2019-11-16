@@ -16,16 +16,16 @@ echo "Building $NAME under $GOOS/$GOARCH"
 go build -o "${NAME}"
 
 tar cvfz tmp.tgz "${NAME}"
+CHECKSUM=$(sha256sum tmp.tgz | cut -d ' ' -f 1)
 
 curl \
   --fail \
   -X POST \
-  --data-binary @${NAME}\
+  --data-binary @tmp.tgz\
   -H 'Content-Type: application/octet-stream' \
   -H "Authorization: Bearer ${GITHUB_TOKEN}" \
   "${UPLOAD_URL}?name=${NAME}.tar.gz"
 
-CHECKSUM=$(sha256sum "$NAME" | cut -d ' ' -f 1)
 
 curl \
   -X POST \
