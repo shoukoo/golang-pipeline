@@ -2,7 +2,7 @@ FROM golang:1.13
 
 LABEL name="Golang Pipeline"
 LABEL maintainer="Shoukoo"
-LABEL version="0.2.0"
+LABEL version="0.2.4"
 LABEL repository="https://github.com/shoukoo/golang-pipeline"
 
 LABEL com.github.actions.name="Golang Pipeline"
