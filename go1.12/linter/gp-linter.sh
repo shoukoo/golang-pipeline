@@ -5,6 +5,7 @@ set -exuo pipefail
 STATICCHECK=${INPUT_STATICCHECK:-on}
 ERRCHECK=${INPUT_ERRCHECK:-on}
 GOLINT=${INPUT_GOLINT:-off}
+GOLINTPATH=${INPUT_GOLINTPATH:-.}
 MISSPELL=${INPUT_MISSPELL:-off}
 
 if [[ $STATICCHECK == "on" ]]; then
@@ -16,7 +17,7 @@ fi
 if [[ $GOLINT == "on" ]]; then
   # https://github.com/golang/lint
   go get -u golang.org/x/lint/golint
-  golint -set_exit_status=1 ./...
+  golint -set_exit_status=1 ${GOLINTPATH}/...
 fi
 
 if [[ $ERRCHECK == "on" ]]; then
