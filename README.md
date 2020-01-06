@@ -51,6 +51,10 @@ A program for checking for unchecked errors in go programs.
 Golint is more focused with coding style. Golint is in use at Google, and it seeks to match the accepted style of the open source Go project.
   - default: off
   - key: GOLINT
+
+  Additionally you can override default golint path with
+  - default: .
+  - key: GOLINTPATH
 - [**Misspell**](https://github.com/client9/misspell)
 Correct commonly misspelt English words
   - default : off
@@ -69,6 +73,7 @@ jobs:
       uses: shoukoo/golang-pipeline/go1.12/linter@master
       with:
         GOLINT: on
+        GOLINTPATH: pkg/controller
         MISSPELL: off
 ```
 ## Test:
