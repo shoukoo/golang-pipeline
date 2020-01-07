@@ -1,8 +1,8 @@
-FROM golang:1.12
+FROM golang:1.12.9-alpine
 
 LABEL name="Golang Pipeline"
 LABEL maintainer="Shoukoo"
-LABEL version="0.2.4"
+LABEL version="0.2.8"
 LABEL repository="https://github.com/shoukoo/golang-pipeline"
 
 LABEL com.github.actions.name="Golang Pipeline"
@@ -14,5 +14,5 @@ COPY entrypoint.sh /entrypoint.sh
 COPY gp-release.sh /gp-release.sh
 COPY gp-setup.sh /gp-setup.sh
 
-RUN apt-get update && apt-get install -y jq
+RUN apk add --no-cache curl jq git build-base
 ENTRYPOINT ["/entrypoint.sh"]
