@@ -14,7 +14,7 @@ curl -o- https://raw.githubusercontent.com/shoukoo/golang-pipeline/master/instal
 
 # Workflows
 
-golang-pipeline supports Go version 1.11, 1.12 and 1.13 and each version has its tests, linters and release.
+golang-pipeline supports Go version 1.11, 1.12, 1.13, and 1.14 and each version has its tests, linters and release.
 
 **Format**
 
