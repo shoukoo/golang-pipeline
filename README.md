@@ -10,7 +10,7 @@ curl -o- https://raw.githubusercontent.com/shoukoo/golang-pipeline/master/instal
 ```
 
 # Workflows
-golang-pipeline supports Go version 1.11, 1.12 and 1.13 and each version has its tests, linters and release. 
+golang-pipeline supports Go version 1.11, 1.12, 1.13 and 1.14 and each version has its tests, linters and release. 
 
 **Format**
 ```
@@ -25,6 +25,8 @@ shoukoo/golang-pipeline/go1.11/linter@master
 shoukoo/golang-pipeline/go1.12/test@master
 # Run release in Go1.13
 shoukoo/golang-pipeline/go1.13/release@master
+# Run release in Go1.14
+shoukoo/golang-pipeline/go1.14/release@master
 ```
 
 If your Go project is not located at the root of the repo you can also specify environment variable PROJECT_PATH:

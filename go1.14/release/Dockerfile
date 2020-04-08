@@ -1,4 +1,4 @@
-FROM golang:1.13
+FROM golang:1.14
 
 LABEL name="Golang Pipeline"
 LABEL maintainer="Shoukoo"
@@ -11,6 +11,8 @@ LABEL com.github.actions.icon="box"
 LABEL com.github.actions.color="blue"
 
 COPY entrypoint.sh /entrypoint.sh
+COPY gp-release.sh /gp-release.sh
 COPY gp-setup.sh /gp-setup.sh
 
+RUN apt-get update && apt-get install -y jq
 ENTRYPOINT ["/entrypoint.sh"]
