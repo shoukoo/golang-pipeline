@@ -12,6 +12,9 @@ if [ $GOOS == 'windows' ]; then
 fi
 NAME="${PROJECT_NAME}-${GOOS}-${GOARCH}${EXT}"
 
+echo "Verifying dependencies have expected content"
+go mod verify
+
 echo "Building $NAME under $GOOS/$GOARCH"
 go build -o "${PROJECT_NAME}"
 
