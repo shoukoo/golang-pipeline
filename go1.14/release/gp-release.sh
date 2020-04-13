@@ -5,8 +5,13 @@ set -exuo pipefail
 EVENT_DATA=$(cat $GITHUB_EVENT_PATH)
 UPLOAD_URL=$(echo $EVENT_DATA | jq -r .release.upload_url)
 UPLOAD_URL=${UPLOAD_URL/\{?name,label\}/}
-PROJECT_NAME=$(basename $GITHUB_REPOSITORY)
+
+if [ -z "${PROJECT_NAME}" ]; then
+  PROJECT_NAME=$(basename $GITHUB_REPOSITORY)
+fi
+
 EXT=""
+
 if [ $GOOS == 'windows' ]; then
     EXT='.exe'
 fi
