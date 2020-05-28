@@ -18,7 +18,7 @@ fi
 ARTIFACT_NAME="${BINARY_NAME}-${GOOS}-${GOARCH}${EXT}"
 
 echo "Building $ARTIFACT_NAME" 
-CGO_ENABLED=0 go build -ldflags "-s -W" -o "${BINARY_NAME}"
+CGO_ENABLED=0 go build -ldflags "-s -w" -o "${BINARY_NAME}"
 
 tar cvfz tmp.tgz "${BINARY_NAME}"
 CHECKSUM=$(sha256sum tmp.tgz | cut -d ' ' -f 1)
