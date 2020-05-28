@@ -18,9 +18,9 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: go1.12  linters
-      uses: shoukoo/golang-pipeline/go1.12/linter@master
+      uses: jesseobrien/golang-pipeline/go1.12/linter@master
     - name: go1.12 test
-      uses: shoukoo/golang-pipeline/go1.12/test@master
+      uses: jesseobrien/golang-pipeline/go1.12/test@master
 EOF
 
 echo "> Created .github/worflows/push.yml"

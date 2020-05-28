@@ -1,9 +1,9 @@
 FROM golang:1.13.4-alpine
 
 LABEL name="Golang Pipeline"
-LABEL maintainer="Shoukoo"
+LABEL maintainer="jesseobrien"
 LABEL version="0.2.9"
-LABEL repository="https://github.com/shoukoo/golang-pipeline"
+LABEL repository="https://github.com/jesseobrien/golang-pipeline"
 
 LABEL com.github.actions.name="Golang Pipeline"
 LABEL com.github.actions.description="Run Golang commands"
