@@ -39,3 +39,14 @@ jobs:
       uses: ./go1.13/test
       env:
         PROJECT_PATH: test
+    - name: go1.19 linter
+      uses: ./go1.19/linter
+      with:
+        GOLINT: on
+        MISSPELL: on
+      env:
+        PROJECT_PATH: test
+    - name: go1.19 test
+      uses: ./go1.19/test
+      env:
+        PROJECT_PATH: test
