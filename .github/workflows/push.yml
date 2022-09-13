@@ -9,6 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: go1.11 linter
+      continue-on-error: true
       uses: ./go1.11/linter
       with:
         GOLINT: on
@@ -17,9 +18,11 @@ jobs:
         PROJECT_PATH: test
     - name: go1.11 test
       uses: ./go1.11/test
+      continue-on-error: true
       env:
         PROJECT_PATH: test
     - name: go1.12 linter
+      continue-on-error: true
       uses: ./go1.12/linter
       with:
         GOLINT: on
@@ -27,11 +30,13 @@ jobs:
       env:
         PROJECT_PATH: test
     - name: go1.12 test
+      continue-on-error: true
       uses: ./go1.12/test
       env:
         PROJECT_PATH: test
     - name: go1.13 linter
       uses: ./go1.13/linter
+      continue-on-error: true
       with:
         GOLINT: on
         MISSPELL: on
@@ -39,10 +44,12 @@ jobs:
         PROJECT_PATH: test
     - name: go1.13 test
       uses: ./go1.13/test
+      continue-on-error: true
       env:
         PROJECT_PATH: test
     - name: go1.19 linter
       uses: ./go1.19/linter
+      continue-on-error: true
       with:
         GOLINT: on
         MISSPELL: on
@@ -50,5 +57,6 @@ jobs:
         PROJECT_PATH: test
     - name: go1.19 test
       uses: ./go1.19/test
+      continue-on-error: true
       env:
         PROJECT_PATH: test
