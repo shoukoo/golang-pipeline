@@ -5,58 +5,22 @@ name: build
 jobs:
   go-pipeline:
     name: Go Checks
+    strategy:
+      matrix:
+        version: [ 1.19 ]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: go1.11 linter
+    - name: go${{ matrix.version }} linter
       continue-on-error: true
-      uses: ./go1.11/linter
+      uses: ./go${{ matrix.version }}/linter
       with:
         GOLINT: on
         MISSPELL: on
       env:
         PROJECT_PATH: test
-    - name: go1.11 test
-      uses: ./go1.11/test
-      continue-on-error: true
-      env:
-        PROJECT_PATH: test
-    - name: go1.12 linter
-      continue-on-error: true
-      uses: ./go1.12/linter
-      with:
-        GOLINT: on
-        MISSPELL: on
-      env:
-        PROJECT_PATH: test
-    - name: go1.12 test
-      continue-on-error: true
-      uses: ./go1.12/test
-      env:
-        PROJECT_PATH: test
-    - name: go1.13 linter
-      uses: ./go1.13/linter
-      continue-on-error: true
-      with:
-        GOLINT: on
-        MISSPELL: on
-      env:
-        PROJECT_PATH: test
-    - name: go1.13 test
-      uses: ./go1.13/test
-      continue-on-error: true
-      env:
-        PROJECT_PATH: test
-    - name: go1.19 linter
-      uses: ./go1.19/linter
-      continue-on-error: true
-      with:
-        GOLINT: on
-        MISSPELL: on
-      env:
-        PROJECT_PATH: test
-    - name: go1.19 test
-      uses: ./go1.19/test
+    - name: go${{ matrix.version }} test
+      uses: ./go${{ matrix.version }}/test
       continue-on-error: true
       env:
         PROJECT_PATH: test
