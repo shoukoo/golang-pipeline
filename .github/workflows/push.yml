@@ -12,7 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: go${{ matrix.version }} linter
-      continue-on-error: true
       uses: ./go${{ matrix.version }}/linter
       with:
         GOLINT: on
@@ -20,7 +19,7 @@ jobs:
       env:
         PROJECT_PATH: test
     - name: go${{ matrix.version }} test
-      uses: ./go${{ matrix.version }}/test
-      continue-on-error: true
       env:
         PROJECT_PATH: test
+      run: |
+        ./go${{ matrix.version }}/test
