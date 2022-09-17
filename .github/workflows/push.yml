@@ -1,41 +1,25 @@
-on: push
+on:
+  - push
+  - pull_request
 name: build
 jobs:
   go-pipeline:
     name: Go Checks
+    strategy:
+      matrix:
+        version: [ 1.19 ]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: go1.11 linter
-      uses: ./go1.11/linter
+    - name: go${{ matrix.version }} linter
+      uses: ./go${{ matrix.version }}/linter
       with:
         GOLINT: on
         MISSPELL: on
       env:
         PROJECT_PATH: test
-    - name: go1.11 test
-      uses: ./go1.11/test
+    - name: go${{ matrix.version }} test
       env:
         PROJECT_PATH: test
-    - name: go1.12 linter
-      uses: ./go1.12/linter
-      with:
-        GOLINT: on
-        MISSPELL: on
-      env:
-        PROJECT_PATH: test
-    - name: go1.12 test
-      uses: ./go1.12/test
-      env:
-        PROJECT_PATH: test
-    - name: go1.13 linter
-      uses: ./go1.13/linter
-      with:
-        GOLINT: on
-        MISSPELL: on
-      env:
-        PROJECT_PATH: test
-    - name: go1.13 test
-      uses: ./go1.13/test
-      env:
-        PROJECT_PATH: test
+      run: |
+        ./go${{ matrix.version }}/test
